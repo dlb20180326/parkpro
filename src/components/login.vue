@@ -8,9 +8,8 @@
 					<label for="in-phone" class="font-label">账号</label>
 				</div>
 				<input type="text" id="in-phone" v-model="account" required />
-				<div class="check">
-					<icon type="warn" v-show="warnShow"></icon>
-				</div>
+<!--				<div class="check">
+				</div>-->
 			</div>
 			<div class="input-all clearfix">
 				<div class="left-content">
@@ -41,12 +40,10 @@ export default {
 	components:{
 		XImg,
 		Icon
+		
 	},
 	methods:{
 		submitBtn(){
-			if(this.account ==""){
-				this.warnShow=!this.warnShow
-			}
 		}
 	}
 }
@@ -68,13 +65,13 @@ export default {
     width: calc(100% - .91rem);
 }
 .input-all #in-phone{
-	/*outline: 0px;*/
+	outline: 0px;
     width: 75%;
     background-color: transparent;
     display: block;
     height: .32rem;
     box-sizing: border-box;
-    /*border:0px;*/
+    border:0px;
     color:#fff;
     position:absolute;
     top:.08rem;

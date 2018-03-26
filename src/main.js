@@ -5,7 +5,11 @@ import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
 import router from './router'
-/*import Home from './components/HelloFromVux'*/
+
+//引入vux
+import { AlertPlugin, ToastPlugin } from 'vux'
+Vue.use(AlertPlugin)
+Vue.use(ToastPlugin)
 
 //引入UI
 import Mint from 'mint-ui';
