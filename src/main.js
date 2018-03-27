@@ -7,9 +7,9 @@ import App from './App'
 import router from './router'
 
 //引入vux
-import { AlertPlugin, ToastPlugin } from 'vux'
+/*import { AlertPlugin, ToastPlugin } from 'vux'
 Vue.use(AlertPlugin)
-Vue.use(ToastPlugin)
+Vue.use(ToastPlugin)*/
 
 //引入UI
 import Mint from 'mint-ui';

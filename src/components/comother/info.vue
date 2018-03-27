@@ -40,7 +40,7 @@
 		</div>
 		<tabbar>
         	<tabbar-item>
-        		<img slot="icon" src="../">
+        		<img slot="icon" src="">
         		<span slot="label">Wechat</span>
       		</tabbar-item>
       		<tabbar-item selected link="/component/demo">
