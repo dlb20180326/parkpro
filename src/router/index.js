@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/login'
+import Information from '@/components/comother/info'
 import Header from '../components/layout/header.vue'
 import footer from '../components/layout/footer.vue'
 Vue.use(Router)
@@ -15,15 +16,21 @@ export default new Router({
     {
       path: '/header',
       name: 'header',
-      component:Header,
+      component:Header
 
     },
     {
       path: '/footer',
       name: 'footer',
-      component:footer,
+      component:footer
 
-    }
+    },
+    {
+      path: '/information',
+      name: 'Information',
+      component:Information
+
+    },
   ]
 })
 

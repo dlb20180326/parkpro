@@ -1,7 +1,7 @@
 <template>
 
   <div class="footer">
-    <mt-tabbar v-model="selected">
+    <mt-tabbar>
       <mt-tab-item id="首页">
         <img slot="icon" src="../../assets/images/iconw-home.png">
         首页
@@ -36,4 +36,7 @@ export default {
 </script>
 <style scoped>
 .footer{ }
+.mint-tabbar{
+	background-color:#FFFFFF;
+}
 </style>
