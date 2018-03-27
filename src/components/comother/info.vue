@@ -43,12 +43,12 @@
         		<img slot="icon" src="">
         		<span slot="label">Wechat</span>
       		</tabbar-item>
-      		<tabbar-item selected link="/component/demo">
-        		<img slot="icon" src="../assets/demo/icon_nav_article.png">
+      		<tabbar-item selected link="/component/">
+        		<img slot="icon" src="">
         		<span slot="label">Explore</span>
       		</tabbar-item>
       		<tabbar-item>
-        		<img slot="icon" src="../assets/demo/icon_nav_cell.png">
+        		<img slot="icon" src="">
         		<span slot="label">News</span>
       		</tabbar-item>
     	</tabbar>
@@ -189,5 +189,5 @@ color:rgba(49,49,49,1);line-height:20px;margin: 0 auto;padding-top:.13rem;}
 .vux-flexbox{width:89.4%;height:.8rem;margin:.13rem auto .63rem auto;}
 .flex-demo{width:98%;height:.8rem;background:rgba(246,246,246,1);border-radius: 2px;}
 .vux-flexbox-item:nth-child(2){margin-right:-1%;}
-#echartShow{width:72%;height:2.1rem;margin:0 auto;border:1px solid red;}
+#echartShow{width:72%;height:2.1rem;margin:0 auto;}
 </style>

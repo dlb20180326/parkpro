@@ -35,5 +35,10 @@ export default {
 }
 </script>
 <style scoped>
-.footer{ }
+.footer{
+	height:.49rem;
+}
+.mint-tabbar{
+	background-color:#FFFFFF;
+}
 </style>
