@@ -39,28 +39,7 @@ let webpackConfig = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
-      },
-      
-      
-/*      
-      {
-            test: /\.css$/,   //这是注释掉的模块，一开始很疑惑加入css的编译模块马上就报错了，注释掉之后sass代码照样可以成功编译。
-            loader: ["vue-style-loader", "css-loader"]
-        },
-        {
-            test: /\.less$/,
-            loader: ["vue-style-loader", "css-loader", "less-loader"]
-        },
-        {
-            test: /\.(scss|sass)$/,
-            loader: ["node-sass", "vue-style-loader", "css-loader", "sass-loader"]
-        },
-        {
-            test: /\.scss/,
-            loaders: ['css', 'autoprefixer', 'sass'],
-        },*/
-      
-  
+      },  
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
@@ -91,5 +70,9 @@ let webpackConfig = {
 
 
 module.exports = vuxLoader.merge(webpackConfig, {
-  plugins: ['vux-ui', 'progress-bar', 'duplicate-style']
+  plugins: ['vux-ui', 'progress-bar', 'duplicate-style',{
+  name: 'less-theme',
+  path: 'src/assets/css/theme.less'
+}],
+
 })

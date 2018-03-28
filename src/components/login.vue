@@ -1,6 +1,7 @@
 <template>
 	<div id="loginPage">
 		<x-img :src=bigPic  class="icon-pic"></x-img>
+		<div class="checkState" v-show="hideCheck">账号名或密码错误，请重试</div>
 		<form id="myForm">
 			<div class="input-all clearfix">
 				<div class="left-content">
@@ -33,7 +34,8 @@ export default {
 			bigPic,
 			account:'',
 			pass:'',
-			warnShow:false
+			hideCheck:false,
+			
 			
 		}
 	},
@@ -44,6 +46,10 @@ export default {
 	},
 	methods:{
 		submitBtn(){
+			if(this.account == "" || this.pass == ""){
+				this.hideCheck = true
+				this.account.focus()
+			}
 		}
 	}
 }
@@ -76,7 +82,7 @@ export default {
     position:absolute;
     top:.08rem;
 }
-.input-all .check{width:0.21rem;height:0.21rem;border:1px solid red;float:right;margin-right:-27px;margin-top:13px;}
+.input-all .check{width:0.21rem;height:0.21rem;float:right;margin-right:-27px;margin-top:13px;}
 .input-all .left-content{width: 0.61rem;height:.32rem ;float:left;margin:0.05rem 0rem 0.05rem -0.52rem;}
 .font-label{font-size:12px;color:rgba(255,255,255,0.6);display:block;margin-left:0.11rem;float:left;width:.32rem;line-height:.37rem;}
 .img-phone{width:0.09rem;height:0.14rem;background: url(../assets/images/iconw-phone.png) no-repeat;background-size:100% 100%;display:block;
@@ -96,4 +102,5 @@ float:left;margin-top:0.12rem;}
     zoom:1;
 }
 .btn-dl{margin:.52rem auto;width:2.37rem;height:.42rem;line-height: .42rem;border:1px solid rgba(255,255,255,0.2);border-radius:5px;text-align:center;font-size:16px;color:rgba(255,255,255,0.8);background-color: rgba(255,255,255,0.2);}
+.checkState{width: 86%;margin: 0 auto;height:.24rem;line-height:.24rem;font-size:13px;border:1px solid red;color:#FFF28C;}
 </style>

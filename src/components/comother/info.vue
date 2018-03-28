@@ -40,16 +40,19 @@
 		</div>
 		<tabbar>
         	<tabbar-item>
-        		<img slot="icon" src="">
-        		<span slot="label">Wechat</span>
+        		<img slot="icon" src="../../assets/images/gray-home.png">
+        		<img slot="icon-active" src="../../assets/images/iconw-home.png">
+        		<span slot="label">首页</span>
       		</tabbar-item>
-      		<tabbar-item selected link="/component/">
-        		<img slot="icon" src="">
-        		<span slot="label">Explore</span>
+      		<tabbar-item active-class="reds">
+        		<img slot="icon" src="../../assets/images/gray-item.png">
+        		<img slot="icon-active" src="../../assets/images/iconw-integral.png">
+        		<span slot="label">积分详情</span>
       		</tabbar-item>
       		<tabbar-item>
-        		<img slot="icon" src="">
-        		<span slot="label">News</span>
+        		<img slot="icon" src="../../assets/images/gray-active.png">
+        		<img slot="icon-active" src="../../assets/images/iconw-activity.png">
+        		<span slot="label">活动详情</span>
       		</tabbar-item>
     	</tabbar>
 	</div>
@@ -113,14 +116,20 @@ export default {
         	    	fontSize:12,
         	    	lineHeight:17
         		},
+        		axisLine:{
+        			lineStyle:{
+        				color:['rgba(255, 206, 140, 1)'],
+        				opacity:0.5
+        			}
+        		},
         		splitLine: {
     				lineStyle: {
-        			color: ['#FEEBD0']
+        			color: ['#ffe8c6']
    				 	}
 				},
 				splitArea: {
     				areaStyle: {
-        			color: ['#FFEACE','FFF4E4']
+        			color: ['#fff4e4','#ffe8c6','#fff6e9']
    				 	}
 				},
             	indicator: [
@@ -128,33 +137,35 @@ export default {
 	                {text: '组织生活', max: 100},
 	                {text: '思想汇报', max: 100},
 	                {text: '先锋作用', max: 100},
-	
 	                {text: '遵纪守法', max: 100},
 	                {text: '公益服务', max: 100},
 	                {text: '缴纳党费', max: 100}
             	],
             	center: ['50%','50%'],
-            	radius: 80
+            	radius: 60
         		}
     		],
-    	series: [
-        {
-            type: 'radar',
-             tooltip: {
+    		series: [
+        	{
+            	type: 'radar',
+            	tooltip: {
                 trigger: 'item'
             },
             itemStyle: {normal: {lineStyle: {color :"#F5A39C",width : 2},areaStyle: { color:"#F59D8E",type: 'default'}}},
             data: [
                 {
-                    value: [60,73,85,40],
+                    value: [80,70,60,65,77,66,90],
                     name: '某软件'
                 }
             ]
-        }
-    ]
-};
+        	}
+    		]
+		};
 		
 		myCharts.setOption(option);
+		window.onresize = function () {
+    	myCharts.resize();
+		};
 		
 		}
 	}
@@ -162,17 +173,20 @@ export default {
 </script>
 
 <style scoped>
-.bg-color{background-color:#FFFFFF;position:absolute;top:0;left:0;right:0;bottom:0;}
+
+body{height:100%;overflow-y:scroll;}
+/*@import url("vux/src/theme.less");*/
+.bg-color{background-color:#FFFFFF;position:absolute;top:0;left:0;right:0;bottom:0px;}
 .header{
 		width:100%;
-		height:1.87rem;
+		height:1.6rem;
 		background: linear-gradient(to right,rgba(185,54,71,1),rgba(155,10,26,1)); 
 		background: -webkit-linear-gradient(to right,rgba(185,54,71,1),rgba(155,10,26,1));  
         background: -o-linear-gradient(to right,rgba(185,54,71,1),rgba(155,10,26,1));  
         background: -moz-linear-gradient(to right,rgba(185,54,71,1),rgba(155,10,26,1));  
         background: -mos-linear-gradient(to right,rgba(185,54,71,1),rgba(155,10,26,1));  
 }
-.header-top{width:90%;height:1.96rem;border-radius: 5px;background:rgba(255,255,255,1);box-shadow: 0 3px 8px 0 rgba(174,174,174,0.5);position: absolute;top:.64rem;left:5%;}
+.header-top{width:90%;height:1.96rem;border-radius: 5px;background:rgba(255,255,255,1);box-shadow: 0 3px 8px 0 rgba(174,174,174,0.5);position: absolute;top:.24rem;left:5%;}
 .top-head{width:78%;height:1.14rem;margin:0 auto;border-bottom:1px solid #EDEDED;}
 .top-left{height:.32rem;font-size:18px;font-family:PingFangSC-Semibold;color:rgba(62,62,62,1);line-height:25px;margin:.49rem 0 .24rem .34rem;font-weight:600;float:left;}
 .top-right{width:.66rem;height:.66rem;font-weight:600;float:right;margin:.24rem .36rem .15rem 0;background:url(../../assets/images/icon-head.png) no-repeat;background-size:100% 100%;}
@@ -181,13 +195,19 @@ export default {
 .second-right{float:right;margin-right:0px;}
 .color-light{font-family:PingFang-SC-Medium;color:rgba(153,153,153,1);}
 .color-dark{font-family:PingFang-SC-Medium;color:rgba(102,102,102,1);}
-.content{width:100%;}
-.annual{width:93.3%;height:.32rem;font-size:20px;font-family:PingFangSC-Semibold;color:rgba(49,49,49,1);line-height:28px;margin:.94rem 0rem .13rem 6.6%;font-weight:600;}
-.fonts-au{width:.59rem;height:.2rem;font-size:14px;font-family:PingFang-SC-Medium;
-color:rgba(49,49,49,1);line-height:20px;margin: 0 auto;padding-top:.13rem;}
+.content{width:100%;background-color:#fff;}
+.annual{width:93.3%;height:.32rem;font-size:20px;font-family:PingFangSC-Semibold;color:rgba(49,49,49,1);line-height:28px;margin:.76rem 0rem .13rem 6.6%;font-weight:600;}
+.fonts-au{width:100%;height:.2rem;font-size:14px;font-family:PingFang-SC-Medium;
+color:rgba(49,49,49,1);line-height:20px;margin: 0 auto;padding-top:.13rem;text-align:center;}
 .integral{width:.55rem;height:.37rem; font-size:26px;font-family:PingFang-SC-Medium;color:rgba(250,122,0,1);line-height:37px;text-align:center;margin:0.04rem auto .1rem auto;}
-.vux-flexbox{width:89.4%;height:.8rem;margin:.13rem auto .63rem auto;}
+.vux-flexbox{width:89.4%;height:.8rem;margin:.13rem auto .2rem auto;}
 .flex-demo{width:98%;height:.8rem;background:rgba(246,246,246,1);border-radius: 2px;}
 .vux-flexbox-item:nth-child(2){margin-right:-1%;}
-#echartShow{width:72%;height:2.1rem;margin:0 auto;}
+#echartShow{width:76%;height:1.72rem;margin:0 auto;}
+.weui-tabbar{background-color:#FFFFFF;width:100%;position:fixed;}
+.weui-tabbar__item{padding:2px 0 0;}
+@media only screen and (min-width: 200px) and (max-width:361px) {
+	.top-left{margin:.49rem 0 .24rem .15rem;}
+	.top-right{margin:.24rem .2rem .15rem 0;}
+}
 </style>
