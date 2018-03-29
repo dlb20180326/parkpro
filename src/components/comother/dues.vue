@@ -16,7 +16,7 @@
 		<div class="pay"></div>
 			<div class="hist">历史党费</div>
 			<flexbox>
-      				<flexbox-item v-for="info in collect">
+      				<flexbox-item v-for="(info,index) in collect" :key="index">
       					<div class="flex-demo">
       						<div class="money">
       							<span class="months">{{info.month}}：</span>
@@ -78,4 +78,5 @@ line-height:.2rem;float:left;padding-top:0.03rem;}
 .greenStatus{color:rgba(24,193,25,1);}
 .redStatus{color:rgba(218,16,55,1);}
 .btnPay{width:89.4%;height:.4rem;line-height:.4rem;text-align:center;font-size:.16rem;font-family:PingFangSC-Medium;color:rgba(255,255,255,1);position:fixed;bottom:.2rem;background:rgba(185,54,71,1);border-radius: 4px;margin-left:5.3%;}
+.vux-flexbox-item{width:100%;border:1px solid red;}
 </style>
