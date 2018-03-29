@@ -8,9 +8,9 @@ import router from './router'
 import './assets/dlbicon/iconfont.css'
 
 //引入vux
-/*import { AlertPlugin, ToastPlugin } from 'vux'
+import { AlertPlugin, ToastPlugin } from 'vux'
 Vue.use(AlertPlugin)
-Vue.use(ToastPlugin)*/
+Vue.use(ToastPlugin)
 
 //引入UI
 import Mint from 'mint-ui';

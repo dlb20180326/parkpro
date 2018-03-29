@@ -1,6 +1,6 @@
 <template>
 	<div style="height:100%">
-		<view-box ref="viewBox">
+		<view-box ref="viewBox" :body-padding-top='40'>
 		<r-header :rfs="contents"></r-header>
 		<div class="card-top">
 		<div class="card-img"></div>
@@ -13,7 +13,12 @@
 			<span class="right-info">{{info.cardId}}</span>
 		</div>
 		</div>
-		<div class="pay"></div>
+		<div class="pay">
+			<span class="payinfo">11月份应缴党费</span>
+			<span class="payPrize">50</span>
+			<span class="prize">元</span>
+			<span class="payBtn">立即缴纳</span>
+		</div>
 			<div class="hist">历史党费</div>
 			<flexbox>
       				<flexbox-item v-for="(info,index) in collect" :key="index">
@@ -66,8 +71,9 @@ import Rheader from './rheader'
 .right-info{height:.25rem;font-size:.14rem;font-family:PingFangSC-Semibold;color:rgba(102,102,102,1);}
 .pay{width:100%;height:.82rem;border-top:0.1rem solid #F3F3F3;border-bottom:0.1rem solid #F3F3F3;background: url(../../assets/images/bag-icon.png) no-repeat;background-size: 100% 100%;}
 .hist{width:93.3%;height:.25rem;font-size:.2rem;font-family:PingFangSC-Semibold;color:rgba(49,49,49,1);line-height:.28rem;margin:.1rem 0rem .2rem .2rem;font-weight:600;}
-.vux-flexbox{width:89.4%;height:.8rem;margin:.13rem auto .32rem auto;}
+.vux-flexbox{width:89.4%;height:auto;margin:.13rem auto .32rem auto;flex-wrap: wrap}
 .flex-demo{width:98%;height:.72rem;background:rgba(246,246,246,1);border-radius: 2px;}
+.vux-flexbox-item:nth-child(odd){margin-left:0px!important;}
 .vux-flexbox-item:nth-child(even){margin-right:-1%;}
 .money{width:84%;margin-left:15.4%;padding-top:.13rem;height:.25rem;}
 .money span{display:block;}
@@ -77,6 +83,11 @@ line-height:.2rem;float:left;padding-top:0.03rem;}
 .status{width:100%;height:.17rem;line-height:.17rem;text-align:center;font-size:.12rem;font-family:PingFangSC-Medium;margin-top:0.04rem;}
 .greenStatus{color:rgba(24,193,25,1);}
 .redStatus{color:rgba(218,16,55,1);}
-.btnPay{width:89.4%;height:.4rem;line-height:.4rem;text-align:center;font-size:.16rem;font-family:PingFangSC-Medium;color:rgba(255,255,255,1);position:fixed;bottom:.2rem;background:rgba(185,54,71,1);border-radius: 4px;margin-left:5.3%;}
-.vux-flexbox-item{width:100%;border:1px solid red;}
+.btnPay{width:89.4%;height:.4rem;line-height:.4rem;text-align:center;font-size:.16rem;font-family:PingFangSC-Medium;color:rgba(255,255,255,1);position:absolute;bottom:.2rem;background:rgba(185,54,71,1);border-radius: 4px;margin-left:5.3%;}
+.vux-flexbox .vux-flexbox-item{min-width: 47%;width: 48%;margin-bottom:.1rem;}
+.payinfo{width:1.16rem;height:.25rem; font-size:.14rem;font-family:PingFangSC-Medium;color:rgba(79,79,79,1);line-height:.2rem;margin:.37rem 0 .2rem .2rem;}
+.payBtn{width:.76rem;height:.2rem;border-radius:.1rem;font-size:.12rem;font-family:PingFangSC-Medium;color:rgba(157,14,30,1);line-height:.2rem; margin:.34rem .72rem .24rem .19rem;border:1px solid #C24747;text-align:center;}
+.pay span{display:block;float:left;}
+.payPrize{height:.44rem; font-size:.26rem;font-family:PingFangSC-Medium;color:rgba(250,122,0,1);line-height:.49rem;margin-top:.19rem;}
+.prize{width:.18rem;height:.2rem; font-size:.14rem;font-family:PingFangSC-Medium;color:rgba(79,79,79,1);line-height:.2rem;margin:.37rem 0 .25rem .1rem;}
 </style>
