@@ -1,5 +1,6 @@
 <template>
 	<div class="bg-color">
+		<view-box ref="viewBox" :body-padding-bottom="53">
 		<div class="header">
 			<div class="header-top">
 				<div class="top-head">
@@ -38,7 +39,7 @@
     			
     		</div>
 		</div>
-		<tabbar>
+		<tabbar slot="bottom">
         	<tabbar-item>
         		<img slot="icon" src="../../assets/images/gray-home.png">
         		<img slot="icon-active" src="../../assets/images/iconw-home.png">
@@ -55,11 +56,12 @@
         		<span slot="label">活动详情</span>
       		</tabbar-item>
     	</tabbar>
+    	</view-box>
 	</div>
 </template>
 
 <script>
-import {Flexbox,FlexboxItem,Tabbar,TabbarItem} from 'vux'
+import {Flexbox,FlexboxItem,Tabbar,TabbarItem,ViewBox} from 'vux'
 import echarts from 'echarts'
 export default {
 	data(){
@@ -75,7 +77,8 @@ export default {
 		Flexbox,
 		FlexboxItem,
 		Tabbar,
-		TabbarItem
+		TabbarItem,
+		ViewBox
 	},
 	mounted(){
 		let datime = new Date().getHours();
@@ -173,10 +176,12 @@ export default {
 </script>
 
 <style scoped>
-
-body{height:100%;overflow-y:scroll;}
-/*@import url("vux/src/theme.less");*/
-.bg-color{background-color:#FFFFFF;position:absolute;top:0;left:0;right:0;bottom:0px;}
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+.bg-color{background-color:#FFFFFF;height:100%;}
 .header{
 		width:100%;
 		height:1.6rem;
@@ -188,22 +193,22 @@ body{height:100%;overflow-y:scroll;}
 }
 .header-top{width:90%;height:1.96rem;border-radius: 5px;background:rgba(255,255,255,1);box-shadow: 0 3px 8px 0 rgba(174,174,174,0.5);position: absolute;top:.24rem;left:5%;}
 .top-head{width:78%;height:1.14rem;margin:0 auto;border-bottom:1px solid #EDEDED;}
-.top-left{height:.32rem;font-size:18px;font-family:PingFangSC-Semibold;color:rgba(62,62,62,1);line-height:25px;margin:.49rem 0 .24rem .34rem;font-weight:600;float:left;}
-.top-right{width:.66rem;height:.66rem;font-weight:600;float:right;margin:.24rem .36rem .15rem 0;background:url(../../assets/images/icon-head.png) no-repeat;background-size:100% 100%;}
-.top-second{width:82%;height:0.17rem;margin:.17rem auto 0 auto;font-size:12px;line-height:.17rem;}
+.top-left{height:.32rem;font-size:.18rem;font-family:PingFangSC-Semibold;color:rgba(62,62,62,1);line-height:.25rem;margin:.49rem 0 .24rem .24rem;font-weight:600;float:left;}
+.top-right{width:.66rem;height:.66rem;font-weight:600;float:right;margin:.24rem .3rem .15rem 0;background:url(../../assets/images/icon-head.png) no-repeat;background-size:100% 100%;}
+.top-second{width:82%;height:0.17rem;margin:.17rem auto 0 auto;font-size:.12rem;line-height:.17rem;}
 .second-left{width:1.53rem;height:0.17rem;float:left;overflow:hidden;}
 .second-right{float:right;margin-right:0px;}
 .color-light{font-family:PingFang-SC-Medium;color:rgba(153,153,153,1);}
 .color-dark{font-family:PingFang-SC-Medium;color:rgba(102,102,102,1);}
 .content{width:100%;background-color:#fff;}
-.annual{width:93.3%;height:.32rem;font-size:20px;font-family:PingFangSC-Semibold;color:rgba(49,49,49,1);line-height:28px;margin:.76rem 0rem .13rem 6.6%;font-weight:600;}
+.annual{width:93.3%;height:.32rem;font-size:.2rem;font-family:PingFangSC-Semibold;color:rgba(49,49,49,1);line-height:.28rem;margin:.76rem 0rem .13rem 6.6%;font-weight:600;}
 .fonts-au{width:100%;height:.2rem;font-size:14px;font-family:PingFang-SC-Medium;
 color:rgba(49,49,49,1);line-height:20px;margin: 0 auto;padding-top:.13rem;text-align:center;}
-.integral{width:.55rem;height:.37rem; font-size:26px;font-family:PingFang-SC-Medium;color:rgba(250,122,0,1);line-height:37px;text-align:center;margin:0.04rem auto .1rem auto;}
-.vux-flexbox{width:89.4%;height:.8rem;margin:.13rem auto .2rem auto;}
+.integral{width:.55rem;height:.37rem; font-size:.26rem;font-family:PingFang-SC-Medium;color:rgba(250,122,0,1);line-height:.37rem;text-align:center;margin:0.04rem auto .1rem auto;}
+.vux-flexbox{width:89.4%;height:.8rem;margin:.13rem auto .32rem auto;}
 .flex-demo{width:98%;height:.8rem;background:rgba(246,246,246,1);border-radius: 2px;}
 .vux-flexbox-item:nth-child(2){margin-right:-1%;}
-#echartShow{width:76%;height:1.72rem;margin:0 auto;}
+#echartShow{width:76%;height:2.1rem;margin:0 auto;}
 .weui-tabbar{background-color:#FFFFFF;width:100%;position:fixed;}
 .weui-tabbar__item{padding:2px 0 0;}
 @media only screen and (min-width: 200px) and (max-width:361px) {

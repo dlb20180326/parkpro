@@ -14,8 +14,11 @@ export default {
 @import '~vux/src/styles/reset.less';
 
 body {
-  background-color: #fbf9fe;
+  height:100%;
+  width:100%;
+  overflow-y:auto;
 }
+#app{width:100%;height:100%;}
 *{
 	margin: 0px;
 	padding:0px;

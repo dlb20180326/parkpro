@@ -48,7 +48,6 @@ export default {
 		submitBtn(){
 			if(this.account == "" || this.pass == ""){
 				this.hideCheck = true
-				this.account.focus()
 			}
 		}
 	}
@@ -102,5 +101,5 @@ float:left;margin-top:0.12rem;}
     zoom:1;
 }
 .btn-dl{margin:.52rem auto;width:2.37rem;height:.42rem;line-height: .42rem;border:1px solid rgba(255,255,255,0.2);border-radius:5px;text-align:center;font-size:16px;color:rgba(255,255,255,0.8);background-color: rgba(255,255,255,0.2);}
-.checkState{width: 86%;margin: 0 auto;height:.24rem;line-height:.24rem;font-size:13px;border:1px solid red;color:#FFF28C;}
+.checkState{width: 86%;margin: 0 auto;height:.24rem;line-height:.24rem;font-size:13px;color:#FFF28C;}
 </style>
