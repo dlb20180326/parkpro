@@ -15,7 +15,7 @@
 		</div>
 		<div class="pay"></div>
 			<div class="hist">历史党费</div>
-			<flexbox v-for="(info,index) in collect.length">
+			<flexbox>
       				<flexbox-item v-for="info in collect">
       					<div class="flex-demo">
       						<div class="money">
@@ -39,10 +39,10 @@ import Rheader from './rheader'
 				contents:{rights:'编辑',title:'党建'},
 				info:{name:'王大陆',cardId:'6282451745218551527'},
 				collect:[{month:'1月党费',money:'451元',status:'已缴纳'},
-				/*		{month:'4月党费',money:'41元',status:'已缴纳'},
+						{month:'4月党费',money:'41元',status:'已缴纳'},
 						{month:'6月党费',money:'97元',status:'已缴纳'},
 						{month:'3月党费',money:'45元',status:'未缴纳'},
-						{month:'7月党费',money:'41元',status:'已缴纳'},*/
+						{month:'7月党费',money:'41元',status:'已缴纳'},
 						{month:'11月党费',money:'97元',status:'未缴纳'}]
 			}
 		},
