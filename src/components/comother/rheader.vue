@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<x-header class="bgColors" :title='rfs.title'><a slot="right" @on-click-more="" v-text="rfs.rights"></a></x-header>
+		<x-header class="bgColors" :title='rfs.title' slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;"><a slot="right" @on-click-more="" v-text="rfs.rights"></a></x-header>
 	</div>
 </template>
 <script>
