@@ -1,16 +1,14 @@
 <template>
 	<div id="loginPage">
 		<x-img :src=bigPic  class="icon-pic"></x-img>
-		<div class="checkState" v-show="hideCheck">账号名或密码错误，请重试</div>
+		<div class="checkState" v-show="hideCheck">{{msg}}</div>
 		<form id="myForm">
 			<div class="input-all clearfix">
 				<div class="left-content">
 					<i class="img-phone"></i>
 					<label for="in-phone" class="font-label">账号</label>
 				</div>
-				<input type="text" id="in-phone" v-model="account" required />
-<!--				<div class="check">
-				</div>-->
+				<input type="text" id="in-phone" v-model="account" @focus="acountCheck" required />
 			</div>
 			<div class="input-all clearfix">
 				<div class="left-content">
@@ -19,8 +17,11 @@
 				</div>
 				<input type="password" id="in-phone" v-model="pass" required />
 			</div>
-			<div class="forget">忘记密码</div>
-			<div class="btn-dl" @click.once="submitBtn">登录</div>
+			<div class="passAbout">
+				<div class="changePass">修改密码</div>
+				<div class="forget">忘记密码</div>
+			</div>
+			<div class="btn-dl" @click="submitBtn">登录</div>
 		</form>
 	</div>
 </template>
@@ -34,6 +35,7 @@ export default {
 			bigPic,
 			account:'',
 			pass:'',
+			msg:'',
 			hideCheck:false,
 			
 			
@@ -46,9 +48,19 @@ export default {
 	},
 	methods:{
 		submitBtn(){
-			if(this.account == "" || this.pass == ""){
+			if(this.account == ""){
 				this.hideCheck = true
+				this.msg = '账号不能为空'
+			}else if(this.pass == ""){
+				this.hideCheck = true
+				this.msg = '密码不能为空'
+				console.log('密码不能为空')
+			}else{
+				console.log('success');
 			}
+		},
+		acountCheck(){
+			this.hideCheck = false
 		}
 	}
 }
@@ -89,7 +101,9 @@ float:left;margin-top:0.12rem;}
 .img-locks{width:0.11rem;height:0.13rem;background: url(../assets/images/iconw-key.png) no-repeat;background-size:100% 100%;display:block;
 float:left;margin-top:0.12rem;}
 .label-lock{font-size:12px;color:rgba(255,255,255,0.6);;display:block;margin-left:0.09rem;float:left;width:.32rem;line-height:.37rem;}
+.passAbout{}
 .forget{width:.61rem;height:0.17rem;color:#ddd;font-size:12px;float:right;margin-top:.14rem;}
+.changePass{width:.61rem;height:0.17rem;color:#ddd;font-size:12px;float:left;margin-top:.14rem;}
  .clearfix:after{
     display: block;
     clear: both;

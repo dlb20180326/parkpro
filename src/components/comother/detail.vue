@@ -11,7 +11,7 @@
 			</div>
 			<p class="allPic">
 			<span class="picture">活动图集</span>
-			<span class="numberz">10张</span>
+			<span class="numberz">{{num}}张</span>
 			</p>
 			<div class="img-show">
 				<img class="previewer-demo-img" v-for="(item, index) in list" :src="item.src" width="100"  @click="show(index)">
@@ -65,6 +65,7 @@ import {Previewer, TransferDom,ViewBox} from 'vux'
 				contents:{rights:'',title:'活动详情'},
 				dateTime:'2019年2月18日',
 				location:'陆家嘴',
+				num:10,
 				list: [{
         			msrc: 'http://ww1.sinaimg.cn/thumbnail/663d3650gy1fplwu9ze86j20m80b40t2.jpg',
         			src: 'http://ww1.sinaimg.cn/large/663d3650gy1fplwu9ze86j20m80b40t2.jpg'
