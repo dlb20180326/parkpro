@@ -4,6 +4,8 @@ import Login from '@/components/login'
 import Information from '@/components/comother/info'
 import Dues from '@/components/comother/dues'
 import Detail from '@/components/comother/detail'
+import Post from '@/components/comother/post'
+import Life from '@/components/comother/life'
 import Test from '@/components/comother/test'
 import Obtain from '@/components/comother/obtain'
 import Header from '../components/layout/header.vue'
@@ -54,6 +56,16 @@ export default new Router({
       path: '/obtain',
       name: 'Obtain',
       component: Obtain
+    },
+    {
+      path: '/post',
+      name: 'Post',
+      component: Post
+    },
+    {
+      path: '/life',
+      name: 'Life',
+      component: Life
     }
   ]
 })
